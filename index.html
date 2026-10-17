@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Marriage From Infidelity - Official Action Portal</title>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --card-dark: #1e293b;
+            --accent-blue: #38bdf8;
+            --btn-blue: #2563eb;
+            --btn-blue-hover: #1d4ed8;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-dark: #334155;
+            --bg-page: #f1f5f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-page);
+            color: #334155;
+            padding-bottom: 40px;
+        }
+
+        .hero-header {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            padding: 30px 20px 40px 20px;
+        }
+
+        .header-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .brand-icon {
+            background-color: #2563eb;
+            color: white;
+            padding: 8px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand-title {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: white;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .stats-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        .main-container {
+            max-width: 600px;
+            margin: -20px auto 0 auto;
+            padding: 0 16px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        .banner-card {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-blue);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .banner-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .banner-desc {
+            font-size: 13px;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 12px 12px 12px 38px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #1e293b;
+            background-color: #f8fafc;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        input:focus, textarea:focus {
+            background-color: white;
+            border-color: var(--btn-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        textarea {
+            padding: 12px;
+            height: 180px;
+            resize: vertical;
+            font-family: inherit;
+            line-height: 1.5;
+            font-size: 13px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            background-color: var(--btn-blue);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--btn-blue-hover);
+        }
+
+        .btn-secondary {
+            width: 100%;
+            background-color: white;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f8fafc;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #0f172a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            display: none;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-header">
+        <div class="header-content">
+            <div class="brand-badge">
+                <div class="brand-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 16 3-8 3 8c-.87.06-1.92.18-3 .18-1.08 0-2.13-.12-3-.18Z"/><path d="m2 16 3-8 3 8c-.87.06-1.92.18-3 .18-1.08 0-2.13-.12-3-.18Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h18"/></svg>
+                </div>
+                <div class="brand-title">SAVE MARRIAGE FROM<br>INFIDELITY</div>
+            </div>
+            <p class="hero-subtitle">National Campaign for Statutory Reform against Marital Infidelity</p>
+            <div class="stats-pill">
+                📊 Total Dispatches Recorded: <span id="counterValue" style="margin-left: 4px; color: #fff;">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="card banner-card">
+            <span class="category-badge">Citizen Action Portal</span>
+            <h1 class="banner-title">Support the Constitutional Representation</h1>
+            <p class="banner-desc">Marriage is a vital pillar of Indian society. Use this interactive portal to send a pre-drafted legal representation directly to the Ministry of Law and Justice and Law Commission supporting statutory reforms against adultery under Articles 21, 38, and 39(f).</p>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title">Personalize Your Support</h2>
+            <div class="form-group">
+                <label for="fullName">YOUR FULL NAME *</label>
+                <div class="input-wrapper">
+                    <span class="input-icon">👤</span>
+                    <input type="text" id="fullName" placeholder="e.g. Rajesh Kumar" oninput="updateTemplate()">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="location">YOUR CITY / STATE *</label>
+                <div class="input-wrapper">
+                    <span class="input-icon">📍</span>
+                    <input type="text" id="location" placeholder="e.g. Pune, Maharashtra" oninput="updateTemplate()">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title">Official Recipient Details</h2>
+            <div class="form-group">
+                <label for="toEmail">TO (MINISTRY OF LAW & JUSTICE)</label>
+                <input type="email" id="toEmail" value="mljoffice@gov.in" readonly style="background-color: #f1f5f9;">
+            </div>
+            <div class="form-group">
+                <label for="ccEmail">CC (LAW COMMISSION OF INDIA)</label>
+                <input type="text" id="ccEmail" value="secy-lawcommission@gov.in, dinesh.maheshwari@gov.in" readonly style="background-color: #f1f5f9;">
+            </div>
+            <div class="form-group">
+                <label for="subjectText">SUBJECT LINE</label>
+                <textarea id="subjectText" style="height: 60px; font-size: 12px; font-weight: 600;" readonly>I support the representation given by Ashish Dutonde under file no. F.No. 27(14)/2025-Leg III for drafting statute against infidelity under the campaign SAVE MARRIAGE FROM INFIDELITY</textarea>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title">Representation Preview</h2>
+            <div class="form-group">
+                <textarea id="bodyText" readonly></textarea>
+            </div>
+            <button class="btn-primary" onclick="handleDispatch()">
+                🚀 Dispatch Representation via Email
+            </button>
+            <button class="btn-secondary" onclick="copyRepresentation()">Copy Body Text Only</button>
+        </div>
+    </main>
+
+    <div id="toast" class="toast">Action logged & mail client opened!</div>
+
+    <script>
+        const COUNTER_KEY = 'save_marriage_dispatch_count';
+
+        function getCount() {
+            return parseInt(localStorage.getItem(COUNTER_KEY) || '1', 10);
+        }
+
+        function setCount(val) {
+            localStorage.setItem(COUNTER_KEY, val);
+            document.getElementById('counterValue').innerText = val;
+        }
+
+        window.onload = function() {
+            updateTemplate();
+            setCount(getCount());
+        };
+
+        function generateBody(name, loc) {
+            const cleanName = name.trim() ? name.trim() : '[Your Name]';
+            const cleanLoc = loc.trim() ? loc.trim() : '[Your City / State]';
+
+            return `Respected Authority,
+
+I, a citizen of India, firmly affirm that marriage is a vital pillar of Indian society. Keeping it vulnerable against adultery is a state failure under the Indian Constitution, specifically Articles 21, 38, and 39(f). 
+
+I hereby declare that I support the movement "Save Marriage from Infidelity" and the formal representation submitted by Shri Ashish Raju Dutonde under File Ref: F.No. 27(14)/2025-Leg III. 
+
+I urge the Ministry of Law and Justice and the Law Commission of India to take urgent legislative cognizance to codify marital infidelity as a Statutory Tort with mandatory civil damages and financial restitution for the loyal spouse.
+
+Sincerely,
+
+${cleanName}
+${cleanLoc}`;
+        }
+
+        function updateTemplate() {
+            const name = document.getElementById('fullName').value;
+            const loc = document.getElementById('location').value;
+            document.getElementById('bodyText').value = generateBody(name, loc);
+        }
+
+        function handleDispatch() {
+            // Increment local counter
+            const newCount = getCount() + 1;
+            setCount(newCount);
+
+            // Open email client
+            const to = document.getElementById('toEmail').value;
+            const cc = document.getElementById('ccEmail').value;
+            const subject = encodeURIComponent(document.getElementById('subjectText').value);
+            const body = encodeURIComponent(document.getElementById('bodyText').value);
+
+            window.location.href = `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
+
+            const toast = document.getElementById('toast');
+            toast.style.display = 'block';
+            setTimeout(() => { toast.style.display = 'none'; }, 3000);
+        }
+
+        function copyRepresentation() {
+            const text = document.getElementById('bodyText').value;
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.getElementById('toast');
+                toast.innerText = "Text copied to clipboard!";
+                toast.style.display = 'block';
+                setTimeout(() => { toast.style.display = 'none'; }, 2500);
+            });
+        }
+    </script>
+</body>
+</html>
